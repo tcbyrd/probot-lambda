@@ -25,6 +25,14 @@ module.exports = {
         path.resolve(__dirname, "node_modules/raven/"),
         path.resolve(__dirname, "node_modules/mime/")
       ],
-    }],
-  }
+    },
+    {
+      test: path.resolve(__dirname, "node_modules/github/lib/routes.json"),
+      loader: 'file',
+      query: {
+        name: 'routes.json'
+      }
+    },
+  ],
+  },
 };
