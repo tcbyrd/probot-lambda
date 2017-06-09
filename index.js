@@ -11,10 +11,10 @@ module.exports.probotHandler = function (event, context, callback) {
   probot.load(require('./autoresponder'));
 
   const e = event.headers['X-GitHub-Event']
-  const payload = event.body
+  const payload = JSON.parse(event.body)
   const id = event.headers['X-Github-Delivery']
-
-  probot.robot.webhook.emit(e, {
+  
+  probot.robot.webhook.emit('*', {
     event: e,
     id: id,
     payload: payload
@@ -24,6 +24,7 @@ module.exports.probotHandler = function (event, context, callback) {
     statusCode: 200,
     body: JSON.stringify({
       message: 'Executed',
+      event: e,
       payload: payload,
     })
   }
