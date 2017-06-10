@@ -11,10 +11,19 @@
 #
 # Happy Coding!
 
-service: sls-probot
+service: lambda-probot
+
+# you can add packaging information here
+# package:
+#   include:
+#     - private-key.pem
 
 plugins:
   - serverless-webpack
+
+custom:
+  webpackIncludeModules: true
+
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
@@ -46,11 +55,7 @@ provider:
 #  environment:
 #    variable1: value1
 
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
+
 #  exclude:
 #    - exclude-me.js
 #    - exclude-me-dir/**
@@ -62,10 +67,10 @@ functions:
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
-events:
- - http:
-     path: probot
-     method: post
+    events:
+     - http:
+         path: probot
+         method: post
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic

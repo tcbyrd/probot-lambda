@@ -1,7 +1,10 @@
 {
   "private": true,
   "dependencies": {
-    "probot": "*"
+    "probot": "*",
+    "babel-core": "6.17.0",
+    "babel-plugin-transform-runtime": "6.15.0",
+    "babel-polyfill": "6.16.0"
   },
   "devDependencies": {
     "babel-core": "6.17.0",
