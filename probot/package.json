@@ -1,0 +1,127 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "probot@*",
+        "scope": null,
+        "escapedName": "probot",
+        "name": "probot",
+        "rawSpec": "*",
+        "spec": "*",
+        "type": "range"
+      },
+      "/Users/tcbyrd/probot/lambda-test"
+    ]
+  ],
+  "_from": "probot@*",
+  "_id": "probot@0.6.0",
+  "_inCache": true,
+  "_location": "/probot",
+  "_nodeVersion": "7.8.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/probot-0.6.0.tgz_1497050821468_0.275281454436481"
+  },
+  "_npmUser": {
+    "name": "bkeepers",
+    "email": "brandon@opensoul.org"
+  },
+  "_npmVersion": "5.0.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "probot@*",
+    "scope": null,
+    "escapedName": "probot",
+    "name": "probot",
+    "rawSpec": "*",
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/probot/-/probot-0.6.0.tgz",
+  "_shasum": "82dc30bead9a12061ad787227ad3f936fbba638e",
+  "_shrinkwrap": null,
+  "_spec": "probot@*",
+  "_where": "/Users/tcbyrd/probot/lambda-test",
+  "author": {
+    "name": "Brandon Keepers"
+  },
+  "bin": {
+    "probot": "./bin/probot.js"
+  },
+  "bugs": {
+    "url": "https://github.com/probot/probot/issues"
+  },
+  "dependencies": {
+    "bottleneck": "^1.15.1",
+    "bunyan": "^1.8.5",
+    "bunyan-format": "^0.2.1",
+    "bunyan-sentry-stream": "^1.1.0",
+    "cache-manager": "^2.4.0",
+    "commander": "^2.9.0",
+    "dotenv": "~4.0.0",
+    "github": "^9.2.0",
+    "github-integration": "^2.0.1",
+    "github-webhook-handler": "^0.6.0",
+    "load-plugins": "^2.1.2",
+    "pkg-conf": "^2.0.0",
+    "raven": "^2.0.0",
+    "resolve": "^1.3.2",
+    "semver": "^5.3.0"
+  },
+  "description": "a trainable robot that responds to activity on GitHub",
+  "devDependencies": {
+    "eslint-config-probot": "^0.1.0",
+    "expect": "^1.20.2",
+    "jsdoc": "^3.4.3",
+    "jsdoc-strip-async-await": "^0.1.0",
+    "minami": "^1.1.1",
+    "mocha": "^3.0.2",
+    "xo": "^0.19.0"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-zxtj2272GwDbnqFpAwVQW3YT9GRNPU9WOj5bce1GZLe+TscwWH5omk8KW6e3WfKV8SMKBikdT7CMUfj9lkxBbA==",
+    "shasum": "82dc30bead9a12061ad787227ad3f936fbba638e",
+    "tarball": "https://registry.npmjs.org/probot/-/probot-0.6.0.tgz"
+  },
+  "engines": {
+    "node": ">=7.7"
+  },
+  "gitHead": "a710401e6305dd0045a4ecd1f59a1a0ebd88e95f",
+  "homepage": "https://github.com/probot/probot#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "bkeepers",
+      "email": "brandon@opensoul.org"
+    }
+  ],
+  "name": "probot",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/probot/probot.git"
+  },
+  "scripts": {
+    "doc": "jsdoc -c .jsdoc.json",
+    "start": "node ./bin/probot run",
+    "test": "mocha && xo --extend eslint-config-probot"
+  },
+  "version": "0.6.0",
+  "xo": {
+    "overrides": [
+      {
+        "files": "test/**/*.js",
+        "rules": {
+          "max-nested-callbacks": "off",
+          "prefer-arrow-callback": "off"
+        }
+      }
+    ]
+  }
+}
