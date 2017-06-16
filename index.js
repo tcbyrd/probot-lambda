@@ -1,7 +1,9 @@
 // Webpack setup
 require.include('probot')
+// If using webpack, uncomment this line to ensure it inludes your private-key
+// in the resulting bundle.
+// require('file-loader?name=private-key.pem!./private-key.pem')
 const fs = require('fs')
-require('file-loader?name=private-key.pem!./private-key.pem')
 const cert = fs.readFileSync('private-key.pem', 'utf8')
 
 // Probot setup
@@ -11,9 +13,13 @@ const probot = createProbot({
   secret: process.env.WEBHOOK_SECRET,
   cert: cert,
   port: 0
-});
-// Load the Probot plugin
-probot.load(require('./autoresponder'));
+})
+
+// Load Probot plugins from the `./plugin` folder
+// You can specify plugins in an `index.js` file or your own custom file by providing
+// a primary entry point in the "main" field of `./plugin/package.json`
+// https://docs.npmjs.com/files/package.json#main
+probot.load(require('./plugin'));
 
 // Lambda Handler
 module.exports.probotHandler = function (event, context, callback) {
@@ -33,6 +39,7 @@ module.exports.probotHandler = function (event, context, callback) {
       })
     }
     callback(null, res)
+
   } catch (err) {
     console.log(err)
     callback(err)
