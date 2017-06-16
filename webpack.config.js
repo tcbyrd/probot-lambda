@@ -12,8 +12,7 @@ module.exports = {
       test: /\.js$/,
       loaders: ['babel'],
       include: [
-        __dirname,
-        path.resolve(__dirname, "autoresponder"),
+        __dirname
       ],
     }],
   },
