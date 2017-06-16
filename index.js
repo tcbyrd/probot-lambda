@@ -1,7 +1,7 @@
 // Webpack setup
 require.include('probot')
-// If using webpack, uncomment this line to ensure it inludes your private-key
-// in the resulting bundle.
+// If using webpack, uncomment this line to ensure
+// it inludes your private-key in the resulting bundle.
 // require('file-loader?name=private-key.pem!./private-key.pem')
 const fs = require('fs')
 const cert = fs.readFileSync('private-key.pem', 'utf8')
@@ -28,6 +28,7 @@ module.exports.probotHandler = function (event, context, callback) {
 
   try { // Do the thing
     probot.robot.webhook.emit(e, {
+      event: e,
       id: event.headers['X-GitHub-Delivery'],
       payload: JSON.parse(event.body)
     })
