@@ -13,11 +13,6 @@
 
 service: lambda-probot
 
-# you can add packaging information here
-# package:
-#   include:
-#     - private-key.pem
-
 plugins:
   - serverless-webpack
 
