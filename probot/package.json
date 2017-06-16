@@ -2,25 +2,25 @@
   "_args": [
     [
       {
-        "raw": "probot@*",
+        "raw": "probot@0.7",
         "scope": null,
         "escapedName": "probot",
         "name": "probot",
-        "rawSpec": "*",
-        "spec": "*",
+        "rawSpec": "0.7",
+        "spec": ">=0.7.0 <0.8.0",
         "type": "range"
       },
       "/Users/tcbyrd/probot/lambda-test"
     ]
   ],
-  "_from": "probot@*",
-  "_id": "probot@0.6.0",
+  "_from": "probot@>=0.7.0 <0.8.0",
+  "_id": "probot@0.7.0",
   "_inCache": true,
   "_location": "/probot",
   "_nodeVersion": "7.8.0",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/probot-0.6.0.tgz_1497050821468_0.275281454436481"
+    "tmp": "tmp/probot-0.7.0.tgz_1497570502288_0.6368249249644578"
   },
   "_npmUser": {
     "name": "bkeepers",
@@ -29,21 +29,21 @@
   "_npmVersion": "5.0.3",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "probot@*",
+    "raw": "probot@0.7",
     "scope": null,
     "escapedName": "probot",
     "name": "probot",
-    "rawSpec": "*",
-    "spec": "*",
+    "rawSpec": "0.7",
+    "spec": ">=0.7.0 <0.8.0",
     "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/probot/-/probot-0.6.0.tgz",
-  "_shasum": "82dc30bead9a12061ad787227ad3f936fbba638e",
+  "_resolved": "https://registry.npmjs.org/probot/-/probot-0.7.0.tgz",
+  "_shasum": "ced546f0d26fe335e635c6c7222890a3cecdb7a0",
   "_shrinkwrap": null,
-  "_spec": "probot@*",
+  "_spec": "probot@0.7",
   "_where": "/Users/tcbyrd/probot/lambda-test",
   "author": {
     "name": "Brandon Keepers"
@@ -83,14 +83,14 @@
   },
   "directories": {},
   "dist": {
-    "integrity": "sha512-zxtj2272GwDbnqFpAwVQW3YT9GRNPU9WOj5bce1GZLe+TscwWH5omk8KW6e3WfKV8SMKBikdT7CMUfj9lkxBbA==",
-    "shasum": "82dc30bead9a12061ad787227ad3f936fbba638e",
-    "tarball": "https://registry.npmjs.org/probot/-/probot-0.6.0.tgz"
+    "integrity": "sha512-4P1T/NBPUR4BRglEifJGQqS+G/kooihALc/y7tFamEHjWM2tf4NTcKZWs/fjzD+p3FyUDr/SwwJ7VMQfZuaDdQ==",
+    "shasum": "ced546f0d26fe335e635c6c7222890a3cecdb7a0",
+    "tarball": "https://registry.npmjs.org/probot/-/probot-0.7.0.tgz"
   },
   "engines": {
     "node": ">=7.7"
   },
-  "gitHead": "a710401e6305dd0045a4ecd1f59a1a0ebd88e95f",
+  "gitHead": "b4cdeabfbd4e5cc0584c75e6269ce49c2d57d164",
   "homepage": "https://github.com/probot/probot#readme",
   "license": "ISC",
   "main": "index.js",
@@ -112,7 +112,7 @@
     "start": "node ./bin/probot run",
     "test": "mocha && xo --extend eslint-config-probot"
   },
-  "version": "0.6.0",
+  "version": "0.7.0",
   "xo": {
     "overrides": [
       {

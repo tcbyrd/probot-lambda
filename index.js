@@ -12,15 +12,14 @@ const probot = createProbot({
   port: 0
 });
 
-module.exports.probotHandler = function (event, context, callback) {
-  probot.load(require('./autoresponder'));
+probot.load(require('./autoresponder'));
 
+module.exports.probotHandler = function (event, context, callback) {
   const e = event.headers['X-GitHub-Event']
   const payload = JSON.parse(event.body)
-  const id = event.headers['X-Github-Delivery']
+  const id = event.headers['X-GitHub-Delivery']
 
   probot.robot.webhook.emit(e, {
-    event: e,
     id: id,
     payload: payload
   })
@@ -29,8 +28,7 @@ module.exports.probotHandler = function (event, context, callback) {
     statusCode: 200,
     body: JSON.stringify({
       message: 'Executed',
-      event: e,
-      payload: payload,
+      payload: payload
     })
   }
 
