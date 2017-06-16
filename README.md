@@ -1,3 +1,3 @@
 #### probot-lambda
 
-Test for running probot in AWS Lambda Edit
+Test for running Probot in AWS Lambda
