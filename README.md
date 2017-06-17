@@ -36,12 +36,14 @@ This demo app is a simple [auto-responder plugin](https://github.com/tcbyrd/prob
 The `Robot` class in Probot implements an event emitter already, so getting this wired up to Lambda is relatively simple. Calling `webhook.emit` directly, you can pass the data coming from the HTTP Request directly to your Probot plugin:
 
 ```javascript
-const e = event.headers['X-GitHub-Event']
-probot.robot.webhook.emit(e, {
-  event: e,
-  id: event.headers['X-GitHub-Delivery'],
-  payload: JSON.parse(event.body)
-})
+module.exports.probotHandler = function (event, context, callback) {
+  const e = event.headers['X-GitHub-Event']
+  probot.robot.webhook.emit(e, {
+    event: e,
+    id: event.headers['X-GitHub-Delivery'],
+    payload: JSON.parse(event.body)
+  })
+}
 ```
 
 #### [Serverless Framework](https://github.com/serverless/serverless)
