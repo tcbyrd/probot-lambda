@@ -20,6 +20,7 @@
   },
   "scripts":{
     "start": "sls webpack serve",
-    "build": "sls webpack -o dist"
+    "build": "sls webpack -o dist",
+    "postinstall": "cp -R node_modules/probot probot/"
   }
 }
