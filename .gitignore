@@ -3,5 +3,5 @@
 .webpack
 dist/
 node_modules
-# probot/
+probot/
 event.json
