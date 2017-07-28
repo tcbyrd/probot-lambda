@@ -15,7 +15,19 @@ $ npm install -g serverless
 ```
 **Note:** Also ensure your AWS Credentials are configured. See the [Serverless Docs](https://serverless.com/framework/docs/providers/aws/guide/credentials/) for more info.
 
-3. Register a new [GitHub App](https://developer.github.com/apps/building-integrations/setting-up-and-registering-github-apps/registering-github-apps/) and put the generated Private Key in the root directory with the filename `private-key.pem`
+3. Register a new [GitHub App](https://developer.github.com/apps/building-integrations/setting-up-and-registering-github-apps/registering-github-apps/) and use the information from this app to configure your function's environment:
+ - Create the 'Webhook Secret' and assign it to an environment variable with the name `WEBHOOK_SECRET`
+ - On your app's Basic info screen, find the `ID` and assign this to an environment variable with the name `APP_ID`
+
+   - **Note**: There are two main ways to assign environment variables programmatically for Serverless Lambda functions:
+     - In the `serverless.yml` file nested under `functions: probot: environment:` or
+     - Using the AWS CLI in the [`update-function-cofiguration`](http://docs.aws.amazon.com/cli/latest/reference/lambda/update-function-configuration.html) method:
+    ```shell
+    # Example
+    aws lambda update-function-configuration --function-name lambda-probot-dev-probot --environment "Variables={APP_ID=0000,WEBHOOK_SECRET=development}"
+  ```
+  - Put the generated Private Key in the root directory with the filename `private-key.pem`
+
 
 4. Deploy the function to AWS with the Serverless CLI:
 ```
