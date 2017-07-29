@@ -25,7 +25,7 @@ $ npm install -g serverless
     ```shell
     # Example
     aws lambda update-function-configuration --function-name lambda-probot-dev-probot --environment "Variables={APP_ID=0000,WEBHOOK_SECRET=development}"
-  ```
+    ```
   - Put the generated Private Key in the root directory with the filename `private-key.pem`
 
 
