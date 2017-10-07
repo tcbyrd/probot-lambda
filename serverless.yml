@@ -15,6 +15,7 @@ service: lambda-probot
 
 plugins:
   - serverless-webpack
+  - serverless-offline
 
 custom:
   webpackIncludeModules: true
@@ -57,7 +58,7 @@ provider:
 
 functions:
   probot:
-    handler: index.probotHandler
+    handler: handler.autoResponder
 
 #    Define function environment variables here
     environment:
