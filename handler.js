@@ -22,7 +22,7 @@ const probot = createProbot({
 probot.load(require('./plugin'));
 
 // Lambda Handler
-module.exports.probotHandler = function (event, context, callback) {
+module.exports.autoResponder = function (event, context, callback) {
   // Determine incoming webhook event type
   // Checking for different cases since node's http server is lowercasing everything
   const e = event.headers['x-github-event'] || event.headers['X-GitHub-Event']
