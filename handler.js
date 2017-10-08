@@ -32,19 +32,19 @@ module.exports.autoResponder = function (event, context, callback) {
 
   try {
     // Do the thing
-    probot.robot.webhook.emit(e, {
+    probot.receive({
       event: e,
-      id: event.headers['x-github-delivery'] || event.headers['X-GitHub-Delivery'],
       payload: event.body
     })
-
-    const res = {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'Executed'
-      })
-    }
-    callback(null, res)
+    .then(() => {
+      const res = {
+        statusCode: 200,
+        body: JSON.stringify({
+          message: 'Executed'
+        })
+      }
+      callback(null, res)
+    })
 
   } catch (err) {
     console.log(err)
