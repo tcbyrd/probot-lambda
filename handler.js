@@ -15,8 +15,14 @@ const probot = createProbot({
 })
 
 // Load the local probot plugins
-probot.setup([require('./plugins/autoresponder'), require('./plugins/web-ui'), require('./plugins/stats')])
+probot.setup([require('./plugins/autoresponder')])
 
 // Proxy the lambda event handler into `probot.server```
 const serverless = require('serverless-http')
+const express = require('express')
+const path = require('path')
+// Override the default folders so they can be accessed
+probot.server.use('/probot/static', express.static(path.join(process.cwd(), 'static')))
+probot.server.set('views', path.join(process.cwd(), 'views'))
+
 module.exports.router = serverless(probot.server)

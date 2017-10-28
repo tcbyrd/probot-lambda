@@ -25,16 +25,16 @@ functions:
 
     environment:
       WEBHOOK_SECRET: development
-      APP_ID: 0000
-      SENTRY_DSN: https://<user>:<key>@sentry.io/0000
+      APP_ID: 2312
+      SENTRY_DSN: https://5052dfa79a7a4db99eb803f7f11c3005:c4c8119bbd994e1c9ac4fab3e5328739@sentry.io/229101
 
     events:
       - http:
-         path: "{page+}"
-         method: get
-      - http:
-         path: /
-         method: get
-      - http:
          path: /
          method: post
+      - http:
+         path: /
+         method: get
+      - http:
+         path: "{page+}"
+         method: get
