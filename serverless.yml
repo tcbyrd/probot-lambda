@@ -26,7 +26,7 @@ functions:
     environment:
       WEBHOOK_SECRET: development
       APP_ID: 0000
-      SENTRY_DSN: 
+      SENTRY_DSN: https://<user>:<key>@sentry.io/0000
 
     events:
       - http:
