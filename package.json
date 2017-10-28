@@ -1,10 +1,22 @@
 {
-  "private": true,
+  "name": "probot-lambda-express",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Tommy Byrd <tcbyrd@github.com>",
+  "license": "ISC",
+  "repository": "https://github.com/tcbyrd/probot-lambda.git",
+  "scripts": {
+    "start": "probot run ./index.js",
+    "test": "mocha && standard",
+    "postinstall": "cp -R node_modules/probot probot/"
+  },
   "dependencies": {
-    "probot": "1.0.0",
     "babel-core": "6.17.0",
     "babel-plugin-transform-runtime": "6.15.0",
-    "babel-polyfill": "6.16.0"
+    "babel-polyfill": "6.16.0",
+    "probot": "3.0.0",
+    "probot-commands": "^1.0.0",
+    "serverless-http": "^1.5.1"
   },
   "devDependencies": {
     "babel-core": "6.17.0",
@@ -13,15 +25,19 @@
     "babel-polyfill": "6.16.0",
     "babel-preset-es2015": "6.16.0",
     "babel-preset-stage-0": "6.16.0",
+    "copy-webpack-plugin": "^4.2.0",
+    "expect": "^1.20.2",
     "file-loader": "^0.11.2",
+    "localtunnel": "^1.8.2",
+    "mocha": "^3.2.0",
     "serverless-offline": "^3.16.0",
     "serverless-webpack": "^3.1.0",
+    "standard": "^10.0.3",
     "webpack": "^2.6.1",
     "webpack-node-externals": "^1.6.0"
   },
-  "scripts": {
-    "start": "sls offline",
-    "build": "sls webpack -o dist",
-    "postinstall": "cp -R node_modules/probot probot/"
+  "engines": {
+    "node": ">= 7.7.0",
+    "npm": ">= 4.0.0"
   }
 }
