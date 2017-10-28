@@ -1,4 +1,5 @@
 const commands = require('probot-commands')
+const stats = require('./stats')
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -25,5 +26,6 @@ module.exports = (robot) => {
     res.end(`PONG ${req.params.page}`)
   })
 
-
 }
+
+module.exports = stats

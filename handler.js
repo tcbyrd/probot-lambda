@@ -14,8 +14,8 @@ const probot = createProbot({
   port: 0
 })
 
-// Load the local probot plugin
-probot.setup([require('./plugin')])
+// Load the local probot plugins
+probot.setup([require('./plugins'), require('./plugins/web-ui')])
 
 // Proxy the lambda event handler into `probot.server```
 const serverless = require('serverless-http')
