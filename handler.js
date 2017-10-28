@@ -26,4 +26,4 @@ const path = require('path')
 probot.server.use('/probot/static', express.static(path.join(process.cwd(), 'static')))
 probot.server.set('views', path.join(process.cwd(), 'views'))
 
-module.exports.router = serverless(probot.server)
+module.exports.router = serverless(probot.server, { callbackWaitsForEmptyEventLoop: true })
