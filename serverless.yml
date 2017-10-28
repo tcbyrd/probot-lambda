@@ -16,7 +16,6 @@ custom:
 provider:
   name: aws
   runtime: nodejs6.10
-  region: us-east-1
 
 functions:
 
@@ -33,8 +32,18 @@ functions:
          path: /
          method: get
       - http:
-         path: /webhook
-         method: post
-      - http:
          path: "{page+}"
          method: get
+
+  webhook:
+    handler: handler.webhook
+
+    environment:
+      WEBHOOK_SECRET: development
+      APP_ID: 2312
+      SENTRY_DSN: https://5052dfa79a7a4db99eb803f7f11c3005:c4c8119bbd994e1c9ac4fab3e5328739@sentry.io/229101
+
+    events:
+      - http:
+         path: /webhook
+         method: post
