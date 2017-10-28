@@ -31,10 +31,10 @@ functions:
     events:
       - http:
          path: /
-         method: post
-      - http:
-         path: /
          method: get
+      - http:
+         path: /webhook
+         method: post
       - http:
          path: "{page+}"
          method: get

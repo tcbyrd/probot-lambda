@@ -11,6 +11,7 @@ const probot = createProbot({
   id: process.env.APP_ID,
   secret: process.env.WEBHOOK_SECRET,
   cert: cert,
+  webhookPath: '/webhook',
   port: 0
 })
 
