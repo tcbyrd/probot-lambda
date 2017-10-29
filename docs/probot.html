@@ -12,7 +12,7 @@
 </body>
 <script type="text/javascript">
   const getFile = async function () {
-    let file = await fetch('https://tcbyrd.github.io/probot-lambda/probot.ejs').then(response => {
+    let file = await fetch('https://raw.githubusercontent.com/tcbyrd/probot-lambda/master/docs/probot.ejs').then(response => {
       return response.text()
     })
   }
