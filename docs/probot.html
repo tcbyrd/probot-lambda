@@ -11,10 +11,10 @@
   <div id="output"></div>
 </body>
 <script type="text/javascript">
-  file = fetch('https://tcbyrd.github.io/probot-lambda/probot.ejs').then(response => {
+  let file = fetch('https://tcbyrd.github.io/probot-lambda/probot.ejs').then(response => {
     return response.text()
   })
-  html = ejs.render(file)
+  let html = ejs.render(file)
   document.getElementById('output').innerHTML = html
 </script>
 
