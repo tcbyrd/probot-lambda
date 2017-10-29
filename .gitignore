@@ -6,3 +6,4 @@ node_modules
 probot/
 event.json
 data/
+package-lock.json
