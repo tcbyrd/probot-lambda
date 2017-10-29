@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="height-full">
 
 <head>
-  <meta charset="utf-8">
-  <script src="https://github.com/mde/ejs/releases/download/v2.5.7/ejs.min.js" charset="utf-8"></script>
-  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Built with Probot</title>
+  <script src="https://unpkg.com/react/umd/react.development.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" charset="utf-8"></script>
+  <script type="module" src="./probot.js"></script>
+  <link rel="stylesheet" href="./static/primer.css">
 </head>
 
-<body>
-  <div id="output"></div>
+<body class="height-full bg-gray-light">
+  <div class="d-flex flex-column flex-justify-center flex-items-center text-center height-full">
+    <img src="./static/robot.svg" alt="Probot Logo" width="100" class="mb-6">
+    <div id="probot"></div>
+    <div class="mt-4">
+      <h4 class="alt-h4 text-gray-light">Need help?</h4>
+      <div class="d-flex flex-justify-center mt-2">
+        <a href="https://probot.github.io/docs/" class="btn btn-outline mr-2">Documentation</a>
+        <a href="https://probot-slackin.herokuapp.com/" class="btn btn-outline">Chat on Slack</a>
+      </div>
+    </div>
+  </div>
 </body>
-<script type="text/javascript">
-  const getFile = async function () {
-    let file = await fetch('https://raw.githubusercontent.com/tcbyrd/probot-lambda/master/docs/probot.ejs').then(response => {
-      return response.text()
-    })
-  }
-
-  getFile()
-    .then(file => ejs.render(file))
-    .then(html => document.getElementById('output').innerHTML = html)
-</script>
 
 </html>
