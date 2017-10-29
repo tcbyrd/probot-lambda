@@ -11,11 +11,15 @@
   <div id="output"></div>
 </body>
 <script type="text/javascript">
-  let file = await fetch('https://tcbyrd.github.io/probot-lambda/probot.ejs').then(response => {
-    return response.text()
-  })
-  let html = ejs.render(file)
-  document.getElementById('output').innerHTML = html
+  async getFile = () => {
+    let file = await fetch('https://tcbyrd.github.io/probot-lambda/probot.ejs').then(response => {
+      return response.text()
+    })
+  }
+
+  getFile()
+    .then(file => ejs.render(file))
+    .then(html => document.getElementById('output').innerHTML = html)
 </script>
 
 </html>
