@@ -11,7 +11,7 @@
   <div id="output"></div>
 </body>
 <script type="text/javascript">
-  async getFile = () => {
+  const getFile = async function () {
     let file = await fetch('https://tcbyrd.github.io/probot-lambda/probot.ejs').then(response => {
       return response.text()
     })
