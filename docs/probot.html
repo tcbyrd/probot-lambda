@@ -11,7 +11,7 @@
   <div id="output"></div>
 </body>
 <script type="text/javascript">
-  let file = fetch('https://tcbyrd.github.io/probot-lambda/probot.ejs').then(response => {
+  let file = await fetch('https://tcbyrd.github.io/probot-lambda/probot.ejs').then(response => {
     return response.text()
   })
   let html = ejs.render(file)
