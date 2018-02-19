@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.2",
+    "probot-commands": "^1.0.0",
     "probot-ts": "5.0.1-typescript",
-    "probot-commands": "^1.0.0"
+    "serverless": "^1.26.0"
   },
   "devDependencies": {
     "serverless-offline": "^3.18.0",
