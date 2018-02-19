@@ -9,30 +9,11 @@ service: lambda-probot-express
 plugins:
   - serverless-offline
 
-custom:
-  webpackIncludeModules: true
-
 provider:
   name: aws
   runtime: nodejs6.10
 
 functions:
-
-  router:
-    handler: handler.router
-
-    environment:
-      WEBHOOK_SECRET: development
-      APP_ID: 2312
-      SENTRY_DSN: https://5052dfa79a7a4db99eb803f7f11c3005:c4c8119bbd994e1c9ac4fab3e5328739@sentry.io/229101
-
-    events:
-      - http:
-         path: /
-         method: get
-      - http:
-         path: "{page+}"
-         method: get
 
   webhook:
     handler: handler.webhook
@@ -44,5 +25,5 @@ functions:
 
     events:
       - http:
-         path: /webhook
+         path: /
          method: post
