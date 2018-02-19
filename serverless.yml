@@ -7,7 +7,6 @@
 service: lambda-probot-express
 
 plugins:
-  - serverless-webpack
   - serverless-offline
 
 custom:

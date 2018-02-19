@@ -1,12 +1,8 @@
-// Webpack setup
-require.include('probot')
-require('file-loader?name=private-key.pem!./private-key.pem')
-
 const fs = require('fs')
 const cert = fs.readFileSync('private-key.pem', 'utf8')
 
 // Probot setup
-const createProbot = require('./probot');
+const createProbot = require('probot-ts');
 const probot = createProbot({
   id: process.env.APP_ID,
   secret: process.env.WEBHOOK_SECRET,
