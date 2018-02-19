@@ -1,0 +1,9 @@
+const probot = require('probot/handler')
+
+const autoresponder = require('./plugins/autoresponder')
+
+probot.setup([autoresponder])
+
+module.exports = handler
+
+probot.serverless(handler)

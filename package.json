@@ -15,6 +15,7 @@
     "babel-core": "6.17.0",
     "babel-plugin-transform-runtime": "6.15.0",
     "babel-polyfill": "6.16.0",
+    "node": "^9.5.0",
     "probot": "3.0.0",
     "probot-commands": "^1.0.0",
     "serverless-http": "^1.5.1"
