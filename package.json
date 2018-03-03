@@ -10,9 +10,7 @@
     "test": "jest && standard"
   },
   "dependencies": {
-    "aws-serverless-express": "^3.0.2",
-    "probot-commands": "^1.0.0",
-    "probot-ts": "5.0.1-typescript",
+    "probot-ts": "5.0.3-typescript",
     "serverless": "^1.26.0"
   },
   "devDependencies": {
@@ -20,7 +18,7 @@
     "standard": "^10.0.3"
   },
   "engines": {
-    "node": ">= 7.7.0",
-    "npm": ">= 4.0.0"
+    "node": ">= 8.9.0",
+    "npm": ">= 5.0.0"
   }
 }
