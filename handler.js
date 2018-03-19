@@ -1,4 +1,4 @@
-const { serverless } = require('./serverless')
+const { serverless } = require('./probot')
 const plugin1 = require('./plugins/autoresponder')
 const plugin2 = require('./plugins/somethingElse')
 
