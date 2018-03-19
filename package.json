@@ -10,7 +10,7 @@
     "test": "jest && standard"
   },
   "dependencies": {
-    "probot-ts": "5.0.4-typescript",
+    "probot-ts": "6.0.0-typescript",
     "serverless": "^1.26.0"
   },
   "devDependencies": {

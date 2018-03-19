@@ -15,15 +15,28 @@ provider:
 
 functions:
 
-  webhook:
-    handler: handler.webhook
+  probot1:
+    handler: handler.probot1
 
     environment:
       WEBHOOK_SECRET: development
       APP_ID: 2312
-      SENTRY_DSN: https://5052dfa79a7a4db99eb803f7f11c3005:c4c8119bbd994e1c9ac4fab3e5328739@sentry.io/229101
+      LOG_LEVEL: trace
 
     events:
       - http:
-         path: /
+         path: /probot1
+         method: post
+
+  probot2:
+    handler: handler.probot2
+
+    environment:
+      WEBHOOK_SECRET: development
+      APP_ID: 2312
+      LOG_LEVEL: trace
+
+    events:
+      - http:
+         path: /probot2
          method: post
