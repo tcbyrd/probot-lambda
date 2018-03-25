@@ -1,5 +1,0 @@
-const {handler} = require('./handler')
-
-const {autoresponder} = require('./plugins/autoresponder')
-
-module.exports = handler(autoresponder)

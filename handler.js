@@ -1,7 +1,11 @@
-const { serverless } = require('./probot')
-const plugin1 = require('./plugins/autoresponder')
-const plugin2 = require('./plugins/somethingElse')
+const { serverless } = require('@probot/serverless-lambda')
 
-module.exports.probot1 = serverless(plugin1)
+const plugin = (robot) => {
+  robot.log(':robot1: says wassup')
+  robot.on('issues.opened', context => {
+    robot.log('Received', context.event + '.' + context.payload.action)
+    // return context.github.issues.createComment(context.issue({body: 'Thanks for opening this issue! :tada:'}))
+  })
+}
 
-module.exports.probot2 = serverless(plugin2)
+module.exports.probot = serverless(plugin)

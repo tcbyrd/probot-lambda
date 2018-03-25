@@ -15,28 +15,18 @@ provider:
 
 functions:
 
-  probot1:
-    handler: handler.probot1
+  probot:
+    handler: handler.probot
 
     environment:
       WEBHOOK_SECRET: development
       APP_ID: 2312
-      LOG_LEVEL: trace
 
     events:
       - http:
-         path: /probot1
-         method: post
+         path: /probot
+         method: get
 
-  probot2:
-    handler: handler.probot2
-
-    environment:
-      WEBHOOK_SECRET: development
-      APP_ID: 2312
-      LOG_LEVEL: trace
-
-    events:
       - http:
-         path: /probot2
+         path: /probot
          method: post

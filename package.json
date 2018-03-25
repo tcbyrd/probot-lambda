@@ -4,13 +4,15 @@
   "description": "",
   "author": "Tommy Byrd <tcbyrd@github.com>",
   "license": "ISC",
+  "main": "handler.js",
   "repository": "https://github.com/tcbyrd/probot-lambda.git",
   "scripts": {
-    "start": "probot run ./index.js",
+    "start": "sls offline",
     "test": "jest && standard"
   },
   "dependencies": {
-    "probot-ts": "6.0.0-typescript",
+    "probot-ts": "6.1.0-ts",
+    "@probot/serverless-lambda": "file:../serverless-lambda",
     "serverless": "^1.26.0"
   },
   "devDependencies": {

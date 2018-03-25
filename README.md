@@ -71,13 +71,4 @@ If you've never built a web application with serverless architectures, the impor
 By default, Serverless uses [Lambda-Proxy](https://serverless.com/framework/docs/providers/aws/events/apigateway/), meaning it passes the entire HTTP request to the handler as an `event`. This allows Probot to process the headers and payload of the webhook just like it does on the server. However, it does transform the body of the request, so the payload must be parsed in the function before being processed by your plugin. Hence, the presence of `payload: JSON.parse(event.body)` in the example above.
 
 #### Supporting `async/await` in AWS Lambda
-Probot requires NodeJS v7.7 and makes use of `async/await`. Since Lambda's NodeJS runtime currently uses v6.10, it doesn't natively handle this syntax. Luckily, there are some tools to help with this.
-
-##### [Webpack](https://webpack.github.io/), [Babel-Loader](https://github.com/babel/babel-loader), and [Serverless-Webpack plugin](https://github.com/elastic-coders/serverless-webpack)
-There's a lot to these tools that you can learn from the above links, but the **TL;DR** is this: Webpack looks at all the NodeJS modules in the root directory (in this case, skipping the entire `node_modules` directory) and bundles them into a single file.
-
-While it's loading the modules, it can also transform them with [Babel](http://babeljs.io/) to work with older versions of Javascript. Generally used on the front-end to take advantage of newer features in JS in older browsers, this is also useful on the server for supporting the same new features in older versions of NodeJS.
-
-The [`serverless-webpack`](https://github.com/elastic-coders/serverless-webpack) plugin allows you to specify this transpilation step in the `serverless.yml` file. This makes it possible to keep using `async/await` in Probot and your Probot plugins, transpile the functions to work with NodeJS v6.10, and deploy to Lambda with a single command: `sls deploy`.
-
-The specific webpack configuration is located in [`webpack.config.js`](https://github.com/tcbyrd/probot-lambda/blob/master/webpack.config.js) and it uses [`.babelrc`](https://github.com/tcbyrd/probot-lambda/blob/master/.babelrc) to specify the babel presets and plugins. Additionally, to keep from having to bundle all of Probot's dependencies, it ignores the `node_modules` folder and instead bundles Probot from the root directory. This helps mitigate bugs that sometimes get introduced when attempting to bundle modules intended for server-side use.
+- TODO: rewrite this to talk about TypeScript
