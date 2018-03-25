@@ -42,21 +42,9 @@ endpoints:
 
 This demo app is a simple [auto-responder plugin](https://github.com/tcbyrd/probot-lambda/blob/master/plugin/autoresponder.js) that sends a nice thank you message when anyone opens an issue on the installed repository.
 
-### Architecture
-
-#### Probot's Event Emitter
-The `Robot` class in Probot implements an event emitter already, so getting this wired up to Lambda is relatively simple. Calling `webhook.emit` directly, you can pass the data coming from the HTTP Request directly to your Probot plugin:
-
-```javascript
-module.exports.probotHandler = function (event, context, callback) {
-  const e = event.headers['X-GitHub-Event']
-  probot.robot.webhook.emit(e, {
-    event: e,
-    id: event.headers['X-GitHub-Delivery'],
-    payload: JSON.parse(event.body)
-  })
-}
-```
+#### Probot Serverless Method
+TODO:
+ - rewrite this section
 
 #### [Serverless Framework](https://github.com/serverless/serverless)
 There are a few different tools that help with testing to deploying serverless applications to AWS, but in general they all do a few things:
