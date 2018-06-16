@@ -81,5 +81,3 @@ While it's loading the modules, it can also transform them with [Babel](http://b
 The [`serverless-webpack`](https://github.com/elastic-coders/serverless-webpack) plugin allows you to specify this transpilation step in the `serverless.yml` file. This makes it possible to keep using `async/await` in Probot and your Probot plugins, transpile the functions to work with NodeJS v6.10, and deploy to Lambda with a single command: `sls deploy`.
 
 The specific webpack configuration is located in [`webpack.config.js`](https://github.com/tcbyrd/probot-lambda/blob/master/webpack.config.js) and it uses [`.babelrc`](https://github.com/tcbyrd/probot-lambda/blob/master/.babelrc) to specify the babel presets and plugins. Additionally, to keep from having to bundle all of Probot's dependencies, it ignores the `node_modules` folder and instead bundles Probot from the root directory. This helps mitigate bugs that sometimes get introduced when attempting to bundle modules intended for server-side use.
-
-Test
