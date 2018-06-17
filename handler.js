@@ -1,4 +1,5 @@
 // A test change
+// Another change
 // Webpack setup
 require.include('probot')
 require('file-loader?name=private-key.pem!./private-key.pem')
