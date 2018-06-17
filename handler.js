@@ -1,4 +1,3 @@
-// A test change
 // Another change
 // Webpack setup
 require.include('probot')
