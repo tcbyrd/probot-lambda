@@ -1,3 +1,9 @@
+:wave: Archiving this in favor of the new extension published in the Probot Org that doesn't use babel/webpack, and builds off the move to TypeScript in Probot 7: https://github.com/probot/serverless-lambda
+
+Feel free to test that out and open issues over there!
+
+<details>
+ <summary>Click here for the old README</summary>
 ## Probot on Lambda
 
 ### :octocat: + :robot: + Serverless = :heart:
@@ -82,4 +88,4 @@ The [`serverless-webpack`](https://github.com/elastic-coders/serverless-webpack)
 
 The specific webpack configuration is located in [`webpack.config.js`](https://github.com/tcbyrd/probot-lambda/blob/master/webpack.config.js) and it uses [`.babelrc`](https://github.com/tcbyrd/probot-lambda/blob/master/.babelrc) to specify the babel presets and plugins. Additionally, to keep from having to bundle all of Probot's dependencies, it ignores the `node_modules` folder and instead bundles Probot from the root directory. This helps mitigate bugs that sometimes get introduced when attempting to bundle modules intended for server-side use.
 
-Test
+</details>
